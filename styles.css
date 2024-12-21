@@ -567,4 +567,16 @@ section#socials {
   }
   
 
-  
+  .go-to-top {
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 20px; /* Icon size */
+    color: #bd0404; /* Light red */
+    vertical-align: right; /* Align with text */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.go-to-top:hover {
+    color: #da3c3c; /* Slightly lighter red on hover */
+    transform: scale(1.2); /* Slight zoom effect */
+}
