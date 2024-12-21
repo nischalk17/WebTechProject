@@ -76,3 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+    document.querySelector('.go-to-top').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('#header').scrollIntoView({ behavior: 'smooth' });
+    });
