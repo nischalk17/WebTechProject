@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.getElementById("sidebar");
-    const sidebarToggle = document.getElementById("sidebar-toggle");
     const modal = document.getElementById("special-occasions-modal");
     const modalClose = document.getElementById("modal-close");
     const specialOccasionsLink = document.getElementById("special-occasions-link");
