@@ -25,6 +25,10 @@ body {
     font-size: 60px; /* Large font size for emphasis */
     text-align: center; /* Center-align the header */
     margin-bottom: 10px; /* Add spacing below the header */
+    pointer-events: none; /* Disable hover and click interactions */
+    border: none;
+    transform: none;
+    transition: none;
 }
 
 /* Main Content */
@@ -36,15 +40,15 @@ main {
 
     flex-grow: 1;
 }
-#header{
+#header {
     background-image: url('./Image/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10px;
- height: 620px;
- cursor: pointer;
+    height: 620px;
+    cursor: pointer;
 }
-#header a{
+#header a {
     text-decoration: none;
     font-family: "Crimson Pro", serif;
     /* font-optical-sizing: auto; */
@@ -53,25 +57,39 @@ main {
     color: #333847;
 }
 header {
- 
     background-repeat: no-repeat;
     text-align: center;
     margin-bottom: 40px;
 }
-header nav ul{
+header nav ul {
     display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-between;
-margin: 0 110px;
+    margin: 0 110px;
 }
-nav ul li{
+nav ul li {
     font-family: "Crimson Pro", serif;
     /* font-optical-sizing: auto; */
     letter-spacing: 2px;
     font-size: 21px;
     color: #333847;
 }
+
+/* Header Navigation Styling */
+header nav ul li a {
+    text-decoration: none;
+    color: #333847;
+    transition: color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Hover Effects for Navigation Links (Excluding "Evento" Logo) */
+header nav ul li a:hover {
+    color: #ff6347; /* Bright tomato red on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+    border-bottom: 2px solid #ff6347; /* Underline effect with tomato red */
+}
+
 header h1 {
     font-size: 36px;
     margin-bottom: 10px;
@@ -108,18 +126,10 @@ header p {
 .gallery-container img:hover {
     transform: scale(1.1); /* Slight zoom effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-  }
-/* .gallery {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-} */
-
-
+}
 
 /* About Us Section */
 .about-us {
-    
     background: linear-gradient(135deg, #f5f5dc, #fff); /* Subtle gradient */
     color: #333;
     padding: 40px 20px;
@@ -189,6 +199,7 @@ header p {
     opacity: 0.3;
     pointer-events: none;
 }
+
 
 /* Our Services Section */
 .our-services {
@@ -449,10 +460,6 @@ header p {
     flex-direction: column;
   }
   
-  #contact-us label {
-    font-size: 14px;
-    line-height: 1.2; /* Keeps text aligned with the checkbox */
-  }
   #contact-us input,
   #contact-us textarea {
     padding: 10px;
@@ -468,22 +475,6 @@ header p {
     height: 100px;
   }
   
-  #contact-us #package-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
-    gap: 10px 40px; /* Row gap: 10px, Column gap: 40px */
-    margin-top: 10px;
-  }
-  
-  #contact-us .checkbox-group {
-    display: flex;
-    align-items: center; /* Align checkbox with the label vertically */
-  }
-  
-  #contact-us .checkbox-group input[type="checkbox"] {
-    margin-right: 10px; /* Space between checkbox and label */
-  }
-  
   #contact-us button {
     padding: 10px 15px;
     background-color: #007bff;
@@ -497,4 +488,83 @@ header p {
   #contact-us button:hover {
     background-color: #0056b3;
   }
+  
+
+  #contact-us #package-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    gap: 15px 40px; /* Row gap: 15px, Column gap: 40px */
+    margin-top: 10px;
+  }
+  
+  #contact-us .checkbox-group {
+    display: flex;
+    align-items: center; /* Align checkbox with text vertically */
+  }
+  
+  #contact-us .checkbox-group input[type="checkbox"] {
+    margin: 0;
+    margin-right: 10px; /* Space between checkbox and label */
+    vertical-align: middle; /* Align checkbox with text */
+  }
+  
+  #contact-us label {
+    font-size: 14px;
+    line-height: 1.4; /* Adjust line height for better alignment */
+  }
+  
+/* Socials Section Styling */
+section#socials {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Default white text color */
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  section#socials h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ffcc00; /* Highlight color for the header */
+  }
+  
+  section#socials .social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between links */
+  }
+  
+  section#socials .social-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff; /* White text for the links */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  section#socials .social-links a:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  /* Individual Icon Colors */
+  section#socials .social-links a .fab.fa-instagram {
+    color: #E1306C; /* Instagram's pink gradient */
+  }
+  
+  section#socials .social-links a .fab.fa-facebook {
+    color: #1877F2; /* Facebook's blue */
+  }
+  
+  section#socials .social-links a .fas.fa-envelope {
+    color: #D44638; /* Gmail's red */
+  }
+  
+  section#socials .social-links a .fas.fa-phone {
+    color: #25D366; /* WhatsApp-like green */
+  }
+  
+
   
