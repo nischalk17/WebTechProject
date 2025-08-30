@@ -1,1 +1,1 @@
-Event Planner Website using html, css, js and php
+Event Planner Website using HTML, CSS, JS and PHP
